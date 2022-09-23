@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build --no-cache -t abrakadabra21099/postgrespro:12_oracle_fdw . \
+&& docker push abrakadabra21099/postgrespro:12_oracle_fdw

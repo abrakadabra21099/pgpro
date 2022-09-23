@@ -1,0 +1,27 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 80:80/tcp
+    volumes:
+      - pgad:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: mail@local
+      PGADMIN_DEFAULT_PASSWORD: YouR_BiG-SecEeT
+    depends_on:
+      - db
+  db:
+    image: abrakadabra21099/postgrespro:13
+    restart: always
+    ports:
+      - 5432:5432/tcp
+    build:
+      context: v12
+    environment:
+      POSTGRES_PASSWORD: YouR_BiG-SecrEt
+    volumes:
+      - db:/var/lib/pgpro/1c-13
+volumes:
+  pgad:
+  db:
