@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build --no-cache -t abrakadabra21099/postgrespro:17 . \
+&& docker push abrakadabra21099/postgrespro:17
